@@ -12,7 +12,14 @@ const sum = (arr) => {
 
 const comboSum = (arr, sum) => {
   // write code for numbers.comboSum
-  return arr === sum;
+  const addnums = {};
+  for (let i = 0; i < arr.length; i += 1) {
+    const num = arr[i];
+    const combo = sum - num;
+    if (combo in addnums) return true;
+    addnums[num] = i;
+  }
+  return false;
 };
 
 module.exports = {

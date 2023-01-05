@@ -6,8 +6,17 @@ const split = (str, delim) => {
 
 const pairs = (str) => {
   // write code for strings.pairs
-  return str.match(/(..?)/g);
+  if (!str) return [];
+  let display = [];
+  if (str.length % 2 !== 0) {
+    str += "_";
+  }
+  for (let i = 0; i < str.length; i += 2) {
+    display.push(`${str[i] + str[i + 1]}`);
+  }
+  return display;
 };
+
 
 const reverse = (str) => {
   // write code for strings.reverse
